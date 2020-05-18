@@ -1,0 +1,81 @@
+﻿<Page x:Class="BookStoreManagement.Views.MainPage.StaffAccountView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"     
+      Background="{DynamicResource MaterialDesignBackground}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="14"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      xmlns:cal="http://www.caliburnproject.org"   
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      d:DesignHeight="600"
+      d:DesignWidth="800"
+      Title="StaffAccountView">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Grid.Row="0" Margin="10">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" HorizontalAlignment="Center">Thông tin nhân viên</TextBlock>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <ListView Margin="5">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id"/>
+                            <GridViewColumn Header="Họ tên"/>
+                            <GridViewColumn Header="Số điện thoại"/>
+                            <GridViewColumn Header="Email"/>
+                            <GridViewColumn Header="Chức vụ"/>
+                            <GridViewColumn Header="Doanh số bán hàng"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Margin="10 5">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" HorizontalAlignment="Center">Chi tiết bán hàng</TextBlock>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Bottom" FontWeight="Bold" Margin="5">Thống kê theo:</TextBlock>
+                    <ComboBox VerticalAlignment="Bottom" Style="{StaticResource VirtualisedMetroComboBox}">
+                        <ComboBoxItem IsSelected="True">Số sách đã bán</ComboBoxItem>
+                        <ComboBoxItem>Số tiền bán sách</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock VerticalAlignment="Bottom" FontWeight="Bold" Margin="5">Từ ngày:</TextBlock>
+                    <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                                md:HintAssist.Hint="Chọn ngày"
+                                Margin="5">
+                    </DatePicker>
+                    <TextBlock VerticalAlignment="Bottom" FontWeight="Bold" Margin="5">Đến ngày:</TextBlock>
+                    <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                                md:HintAssist.Hint="Chọn ngày"
+                                Margin="5">
+                    </DatePicker>
+                </StackPanel>
+                <Grid Grid.Row="1">
+
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>
